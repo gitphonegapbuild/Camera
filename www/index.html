@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<title>Take picture</title>
+		<script type="text/javascript"	charset="utf-8" src="cordova.js"></script>
+		<script>
+			document.addEventListener("deviceready", init, false);
+			function init() {				
+			}
+			function TakePhoto() {
+				if (!navigator.camera) {
+					alert("Camera API not supported", "Error");
+					return;
+				}
+				navigator.camera.getPicture(SucessCallback, ErrorCallback);
+			}
+			function SucessCallback(result) {
+				alert("Picture Taken")
+			}
+			function ErrorCallback(error) {
+				alert("Error")
+			}
+		</script>
+	</head>
+	<body>
+		<button onclick="TakePhoto()">Take Photo</button>
+	</body>
+</html>
